@@ -1,8 +1,8 @@
 #!/bin/sh
 
 usbmon() {
-	usb1=$(lsblk -la | awk '/sdc1/ { print $1 }')
-	usb1mounted=$(lsblk -la | awk '/sdc1/ { print $7 }')
+	usb1=$(lsblk -la | awk '/sdb1/ { print $1 }')
+	usb1mounted=$(lsblk -la | awk '/sdb1/ { print $7 }')
 
 	if [ "$usb1" ]; then
 		if [ -z "$usb1mounted" ]; then
