@@ -1,5 +1,4 @@
-# give statusbar.sh permission with:
+// give statusbar.sh permission with:
 chmod +x statusbar.sh
 ls -l statusbar.sh
-
-# change statusbar.sh directory in .xinitrc
+// change statusbar.sh directory in .xinitrc
