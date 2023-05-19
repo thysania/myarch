@@ -1,10 +1,13 @@
 #!/bin/sh
 
 bat() {
-
+	STATUS=$(acpi | awk -F, '{print $1}' | awk '{print $3}')
 	BAT=$(acpi -b | grep -P -o '[0-9]+(?=%)')
-	echo "  $BAT%"
-
+	if [ "$STATUS" = "Discharging"  ]; then
+		echo " $BAT%"
+	else 
+		echo " $BAT%"
+	fi
 }
 
 dwm_weather() {
