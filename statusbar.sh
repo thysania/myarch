@@ -1,6 +1,6 @@
 #!/bin/sh
 
-bat() {
+battery() {
 	STATUS=$(acpi | awk -F, '{print $1}' | awk '{print $3}')
 	BAT=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 	if [ "$STATUS" = "Discharging"  ]; then
@@ -151,7 +151,7 @@ clock() {
 
 main() {
 	while true; do
-		xsetroot -name " $(dwm_spotify)  $(usbmon)   $(ram) | $(cpu) | $(network) | $(volume_alsa) | $(bat) | $(dwm_weather )| $(clock) "
+		xsetroot -name " $(dwm_spotify)  $(usbmon)   $(ram) | $(cpu) | $(network) | $(volume_alsa) | $(battery) | $(dwm_weather )| $(clock) "
 		sleep 2
 	done
 }
