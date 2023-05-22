@@ -39,7 +39,7 @@ alias .5='cd ../../../../..'
 # alias lsa='ls -a'
 
 # git
-alias git='git clone'
+# alias git='git clone'
 
 # shutdown and reboot
 alias ssn='sudo shutdown'
