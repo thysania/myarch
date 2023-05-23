@@ -15,6 +15,8 @@ fi
 # background
 ~/.fehbg &
 
+# automount/unmount
+udiskie &
 
 # loop
 while true; do
