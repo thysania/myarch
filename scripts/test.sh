@@ -20,12 +20,16 @@ PKGS=(
         'libxft'
         'libxinerama'
         'webkit2gtk'
+        'picom'
 # audio
         'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
         'alsa-plugins'      # ALSA plugins
         'pulseaudio'        # Pulse Audio sound components
         'pulseaudio-alsa'   # ALSA configuration for pulse audio
         'pavucontrol'       # Pulse Audio volume control
+# utilities
+        'udiskie'           # Automounter for removable media
+        'acpi'              # Battery status
 )
 
 for PKG in "${PKGS[@]}"; do
