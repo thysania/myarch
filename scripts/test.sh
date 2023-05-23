@@ -13,8 +13,12 @@ echo
 
 PKGS=(
         'xorg-server'
-        'xorg-apps'
-        'mesa'
+        'xorg-xsetroot'
+        'xorg-xinit'
+        'libx11'
+        'libxft'
+        'libxinerama'
+        'webkit2gtk'
 )
 
 for PKG in "${PKGS[@]}"; do
