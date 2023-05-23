@@ -18,7 +18,7 @@ fi
 # automount/unmount
 udiskie &
 
-# loop
+# dwm loop
 while true; do
 	dwm >/dev/null 2>&1
 done
