@@ -30,6 +30,7 @@ PKGS=(
 # utilities
         'udiskie'           # Automounter for removable media
         'acpi'              # Battery status
+        'feh'               # wallpaper
 )
 
 for PKG in "${PKGS[@]}"; do
