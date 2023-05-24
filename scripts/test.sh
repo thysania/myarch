@@ -38,6 +38,9 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+echo "CHANGING WALLPAPER"
+feh --bg-fill ~/myarch/wallpapers/nord-lake.png
+echo "wallpaper changed"
 echo
 echo "Done!"
 echo
