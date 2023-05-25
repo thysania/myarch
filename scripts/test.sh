@@ -8,7 +8,7 @@ echo " /_/    \_\|_|   \___||_| |_| |______||_|   \___||_| |_|"
 echo "--------------------------------------------------------"
 
 echo
-echo "INSTALLING FONTS"
+echo
 echo
 
 PKGS=(
@@ -31,6 +31,10 @@ PKGS=(
         'udiskie'           # Automounter for removable media
         'acpi'              # Battery status
         'feh'               # wallpaper
+# fonts
+        'ttf-hack'
+        'ttf-hack-nerd'
+        'ttf-font-awesome'
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -39,8 +43,13 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo "CHANGING WALLPAPER"
-feh --bg-fill ~/myarch/wallpapers/nord-lake.png
+feh --bg-fill ~/myarch/wallpapers/arch.png
 echo "wallpaper changed"
+echo ""
+echo "Copying .xinitrc"
+cp .xinitrc ~/.xinitrc
+echo "Copying bashrc"
+cp .bashrc ~/.bashrc
 echo
 echo "Done!"
 echo
