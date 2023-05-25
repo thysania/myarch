@@ -8,7 +8,7 @@ echo " /_/    \_\|_|   \___||_| |_| |______||_|   \___||_| |_|"
 echo "--------------------------------------------------------"
 
 echo
-echo
+echo "INSTALLING PACKAGES"
 echo
 
 PKGS=(
@@ -31,6 +31,7 @@ PKGS=(
         'udiskie'           # Automounter for removable media
         'acpi'              # Battery status
         'feh'               # wallpaper
+        'zsh'               # zsh shell
 # fonts
         'ttf-hack'
         'ttf-hack-nerd'
