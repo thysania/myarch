@@ -35,26 +35,15 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
-# ls
-# alias lsa='ls -a'
-
-# git
-# alias git='git clone'
+# screenshot
+alias sss='scrot -u -d'                          #Immediate screenshot
+alias ss2='scrot -u -d 2'                        #Screenshot with 2 seconds delay
+alias ss5='scrot -u -d 5'                        #Screenshot with 5 seconds delay
+alias ss9='scrot -u -d 9'                        #Screenshot with 9 seconds delay
 
 # shutdown and reboot
-alias ssn='sudo shutdown'
-alias sr='sudo reboot'
-
-# youtube-dl
-alias yta-aac="youtube-lp --extract-audio --audio-format aac "
-alias yta-best="yt-dlp --extract-audio --audio-format best "
-alias yta-flac="yt-dlp --extract-audio --audio-format flac "
-alias yta-m4a="yt-dlp --extract-audio --audio-format m4a "
-alias yta-mp3="yt-dlp --extract-audio --audio-format mp3 "
-alias yta-opus="yt-dlp --extract-audio --audio-format opus "
-alias yta-vorbis="yt-dlp --extract-audio --audio-format vorbis "
-alias yta-wav="yt-dlp --extract-audio --audio-format wav "
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+alias sn='sudo shutdown'                         #System shutdown
+alias sr='sudo reboot'                           #System reboot
 
 # pacman 
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
