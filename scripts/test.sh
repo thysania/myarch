@@ -30,8 +30,9 @@ PKGS=(
 # utilities
         'udiskie'           # Automounter for removable media
         'acpi'              # Battery status
-        'feh'               # wallpaper
-        'zsh'               # zsh shell
+        'feh'               # Wallpaper
+        'scrot'             # Screenshots
+        'zsh'               # Zsh shell
 # fonts
         'ttf-hack'
         'ttf-hack-nerd'
