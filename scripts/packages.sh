@@ -49,6 +49,17 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
+echo "  === INSTALLING SNAPS ==="
+echo " --> Cloning snap"
+cd
+git clone https://aur.archlinux.org/snapd.git
+echo " --> Installing snap"
+cd snapd
+makepkg -si
+sudo systemctl enable --now snapd.socket
+
+echo " --> Installing brave"
+sudo snap install brave
 
 echo
 echo "Done!"
