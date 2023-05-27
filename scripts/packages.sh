@@ -46,39 +46,6 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-# installing dwm
-echo "INSTALLING DWM"
-cd dwm/
-sudo make clean install
-cd ..
-echo""
-
-# installing st terminal
-echo "INSTALLING ST TERMINAL"
-cd st/
-sudo make clean install
-cd ..
-echo ""
-
-# creating user dirs
-echo "CREATING USER DIRS"
-xdg-user-dirs-update
-echo ""
-
-# changing wallpaper
-echo "CHANGING WALLPAPER"
-feh --bg-fill ~/myarch/wallpapers/arch.png
-echo ""
-
-# copying dotfiles
-echo "Copying .xinitrc"
-cp .xinitrc ~/.xinitrc
-echo "Copying .bashrc"
-cp .bashrc ~/.bashrc
-echo "Copying .bash_profile"
-cp .bashrc_profile ~/bash_profile
-echo "Copying .zshrc"
-cp .zshrc ~/.zshrc
 
 echo
 echo "Done!"
