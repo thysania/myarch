@@ -23,6 +23,12 @@ cd ~/myarch/st/
 sudo make clean install
 echo ""
 
+# installing oh-my-zsh
+echo "  --> INSTALLING OHMYZSH"
+cd
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd myarch
+
 # installing dmenu
 echo "  --> INSTALLING DMENU"
 cd ~/myarch/dmenu
@@ -54,6 +60,7 @@ else
     mkdir ~/.config/dunst
 fi
 
+cd ~/myarch
 echo " => Copying .xinitrc"
 cp .xinitrc ~/.xinitrc
 
