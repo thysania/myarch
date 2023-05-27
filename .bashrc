@@ -51,13 +51,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias .3='cd ../../..'
 alias .4='cd ../../../..'
-alias .5='cd ../../../../..'
-
-# ls
-# alias lsa='ls -a'
-
-# git
-alias git='git clone'
+alias .5='cd ../../../..'
 
 # shutdown and reboot
 alias ssn='sudo shutdown'
