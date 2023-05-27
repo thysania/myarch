@@ -8,7 +8,7 @@ echo " /_/    \_\|_|   \___||_| |_| |______||_|   \___||_| |_|"
 echo "--------------------------------------------------------"
 
 echo
-echo "INSTALLING PACKAGES"
+echo "  === INSTALLING PACKAGES ==="
 echo
 
 PKGS=(
