@@ -39,6 +39,9 @@ PKGS=(
         'ttf-hack-nerd'
         'ttf-font-awesome'
         'noto-fonts-emoji'
+# browsers
+        'qutebrowser'
+        
 )
 
 for PKG in "${PKGS[@]}"; do
