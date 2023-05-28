@@ -28,7 +28,7 @@
 /* This patch centers dmenu in the middle of the screen.
  * https://tools.suckless.org/dmenu/patches/center/
  */
-#define CENTER_PATCH 0
+#define CENTER_PATCH 1
 
 /* Minor patch to enable the use of Ctrl+v (XA_PRIMARY) and Ctrl+Shift+v (CLIPBOARD) to paste.
  * By default dmenu only supports Ctrl+y and Ctrl+Shift+y to paste.
@@ -74,13 +74,13 @@
  * G columns * L lines grid.
  * https://tools.suckless.org/dmenu/patches/grid/
  */
-#define GRID_PATCH 0
+#define GRID_PATCH 1
 
 /* This patch adds the ability to move left and right through a grid.
  * This patch depends on the grid patch.
  * https://tools.suckless.org/dmenu/patches/gridnav/
  */
-#define GRIDNAV_PATCH 0
+#define GRIDNAV_PATCH 1
 
 /* This patch highlights the individual characters of matched text for each dmenu list entry.
  * The fuzzy highlight patch takes precedence over this patch.
@@ -169,7 +169,7 @@
  * substring matches.
  * https://tools.suckless.org/dmenu/patches/no-sort/
  */
-#define NO_SORT_PATCH 0
+#define NO_SORT_PATCH 1
 
 /* This is a patch to have dmenu read stdin in a non blocking way, making it wait for input both
  * from stdin and from X. This means that you can continue feeding dmenu while you type.
