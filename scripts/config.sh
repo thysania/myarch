@@ -75,7 +75,7 @@ echo " => Copying .bashrc"
 cp .bashrc ~/.bashrc
 
 echo " => Copying .bash_profile"
-cp .bashrc_profile ~/bash_profile
+cp .bash_profile ~/bash_profile
 
 echo " => Copying .zshrc"
 cp .zshrc ~/.zshrc
