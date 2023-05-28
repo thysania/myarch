@@ -15,6 +15,9 @@ fi
 # background
 ~/.fehbg &
 
+# picom
+picom &
+
 # automount/unmount
 udiskie &
 
