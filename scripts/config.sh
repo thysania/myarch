@@ -27,7 +27,14 @@ echo ""
 echo "  --> INSTALLING OHMYZSH"
 cd
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cd myarch
+
+# installing dunst
+echo " --> CLONING DUNST"
+cd
+git clone https://github.com/dunst-project/dunst.git
+echo " --> INSTALLING DUNST"
+cd dunst
+sudo make clean install
 
 # installing dmenu
 echo "  --> INSTALLING DMENU"
