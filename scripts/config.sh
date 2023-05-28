@@ -15,11 +15,13 @@ echo
 echo "  --> INSTALLING DWM"
 cd ~/myarch/dwm/
 sudo make clean install
+cd ..
+chmod +x statusbar.sh
 echo""
 
 # installing st terminal
 echo "  --> INSTALLING ST TERMINAL"
-cd ~/myarch/st/
+cd ~/myarch/st
 sudo make clean install
 echo ""
 
