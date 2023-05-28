@@ -8,6 +8,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
+zsh
 
 function _update_ps1() {
     PS1=$(powerline-shell $?)
