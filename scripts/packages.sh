@@ -39,8 +39,9 @@ PKGS=(
         'ttf-hack-nerd'
         'ttf-font-awesome'
         'noto-fonts-emoji'
+        'ttf-dejavu'
 # browsers
-        'qutebrowser'
+        'firefox'
         
 )
 
@@ -56,6 +57,7 @@ git clone https://aur.archlinux.org/snapd.git
 echo " --> Installing snap"
 cd snapd
 makepkg -si
+sleep 10
 sudo systemctl enable --now snapd.socket
 
 echo " --> Installing brave"
