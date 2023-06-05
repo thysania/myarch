@@ -21,7 +21,7 @@ dwm_weather() {
 dwm_spotify() {
 
         ARTIST=$(playerctl metadata artist)
-        TRACK=$(playerctl metadata title)
+        TRACK=$(playerctl metadata title | awk -F- '{print $1}')
         POSITION=$(playerctl position | sed 's/..\{6\}$//')
         DURATION=$(playerctl metadata mpris:length | sed 's/.\{6\}$//')
         STATUS=$(playerctl status)
