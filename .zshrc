@@ -29,7 +29,7 @@ ex ()
 ### ALIASES ###
 
 # screenshot
-alias ss0='scrot -u -d ~/Pictures/Screenshots/%b%d::%H%M%S.png'
+alias ss0='scrot -u -d ~/Pictures/Screenshots/Screenshot-%d%b%4Y-%a-%H-%M-%S.png'
 
 alias ss2='scrot -u -d 2 ~/Pictures/Screenshots/Screenshot-%d%b%4Y-%a-%H-%M-%S.png'
 alias ss5='scrot -u -d 5 ~/Pictures/Screenshots/Screenshot-%d%b%4Y-%a-%H-%M-%S.png'
