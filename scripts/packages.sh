@@ -21,6 +21,7 @@ PKGS=(
         'libxinerama'
         'webkit2gtk'
         'picom'
+        'libmpdclient'
 # audio
         'alsa-utils'        # Advanced Linux Sound Architecture (ALSA) Components https://alsa.opensrc.org/
         'alsa-plugins'      # ALSA plugins
