@@ -27,7 +27,7 @@ static const char col_purple[]      = "#5d4881";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm]   = { col_white, col_black, col_black },
-	[SchemeSel]    = { col_black, col_black, col_white },
+	[SchemeSel]    = { col_black, col_black, col_purple },
 	[SchemeTitle]  = { col_white, col_black, col_black },
 };
 
