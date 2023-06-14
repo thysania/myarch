@@ -51,10 +51,10 @@ clear
 logo "Installing needed packages.."
 
 dependencias=(base-devel xorg-xsetroot xorg-server xorg-xinit libx11 libxft libxinerama webkit2gtk libmpdclient \
-			 udiskie acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
-			 mpd ncmpcpp picom lf pamixer \
-			 ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
-			 zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
+			udiskie acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
+			mpd ncmpcpp picom lf pamixer \
+			ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
+			zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
 
 is_installed() {
   pacman -Qi "$1" &> /dev/null
@@ -92,9 +92,12 @@ logo "Installing dotfiles.."
 printf "Copying files to respective directories..\n"
 
 [ ! -d ~/.config ] && mkdir -p ~/.config
+[ ! -d ~/.local/bin ] && mkdir -p ~/.local/bin
+[ ! -d ~/.local/share/applications ] && mkdir -p ~/.local/share/applications
 [ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
+[ ! -d ~/.local/share/asciiart ] && mkdir -p ~/.local/share/asciiart
 
-for archivos in ~/dotfiles/config/*; do
+for archivos in ~/myarch/.config/*; do
   cp -R "${archivos}" ~/.config/
   if [ $? -eq 0 ]; then
 	printf "%s%s%s folder copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
@@ -105,7 +108,7 @@ for archivos in ~/dotfiles/config/*; do
   fi
 done
 
-for archivos in ~/dotfiles/misc/bin/*; do
+for archivos in ~/myarch/misc/bin/*; do
   cp -R "${archivos}" ~/.local/bin/
   if [ $? -eq 0 ]; then
 	printf "%s%s%s file copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
@@ -116,8 +119,30 @@ for archivos in ~/dotfiles/misc/bin/*; do
   fi
 done
 
-for archivos in ~/dotfiles/misc/applications/*; do
+for archivos in ~/myarch/misc/applications/*; do
   cp -R "${archivos}" ~/.local/share/applications/
+  if [ $? -eq 0 ]; then
+	printf "%s%s%s file copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
+	sleep 1
+  else
+	printf "%s%s%s failed to been copied, you must copy it manually%s\n" "${BLD}" "${CRE}" "${archivos}" "${CNC}"
+	sleep 1
+  fi
+done
+
+for archivos in ~/myarch/misc/fonts/*; do
+  cp -R "${archivos}" ~/.local/share/fonts/
+  if [ $? -eq 0 ]; then
+	printf "%s%s%s copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
+	sleep 1
+  else
+	printf "%s%s%s failed to been copied, you must copy it manually%s\n" "${BLD}" "${CRE}" "${archivos}" "${CNC}"
+	sleep 1
+  fi
+done
+
+for archivos in ~/myarch/misc/asciiart/*; do
+  cp -R "${archivos}" ~/.local/share/asciiart/
   if [ $? -eq 0 ]; then
 	printf "%s%s%s file copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
 	sleep 1
@@ -132,3 +157,23 @@ cp -f "$HOME"/myarch/.xinitrc "$HOME"
 fc-cache -rv >/dev/null 2>&1
 printf "%s%sFiles copied succesfully!!%s\n" "${BLD}" "${CGR}" "${CNC}"
 sleep 3
+
+########## ---------- Enabling MPD service ---------- ##########
+
+logo "Enabling mpd service"
+
+systemctl --user enable mpd.service
+systemctl --user start mpd.service
+printf "%s%sDone!!%s\n\n" "${BLD}" "${CGR}" "${CNC}"
+sleep 2
+
+########## --------- Changing shell to zsh ---------- ##########
+logo "Changing default shell to zsh"
+printf "%s%sIf your shell is not zsh will be changed now.\nYour root password is needed to make the change.\n\nAfter that is important for you to reboot.\n %s\n" "${BLD}" "${CYE}" "${CNC}"
+if [[ $SHELL != "/usr/bin/zsh" ]]; then
+  echo "Changing shell to zsh, your root pass is needed."
+  chsh -s /usr/bin/zsh
+else
+  printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
+  zsh
+fi
