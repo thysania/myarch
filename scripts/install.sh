@@ -51,10 +51,10 @@ clear
 logo "Installing needed packages.."
 
 dependencias=(base-devel xorg-xsetroot xorg-server xorg-xinit libx11 libxft libxinerama webkit2gtk libmpdclient \
-			                   udiskie acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
-			                   mpd ncmpcpp picom lf pamixer \
-			                   ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
-			                   zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
+			 udiskie acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
+			 mpd ncmpcpp picom lf pamixer \
+			 ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
+			 zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
 
 is_installed() {
   pacman -Qi "$1" &> /dev/null
