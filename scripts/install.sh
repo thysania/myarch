@@ -49,7 +49,7 @@ clear
 logo "Installing needed packages.."
 
 dependencias=(base-devel xorg-xsetroot xorg-server xorg-xinit libx11 libxft libxinerama webkit2gtk libmpdclient \
-			                   udiskie acpie feh scrot xdg-user-dirs xorg-xprob \
+			                   udiskie acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
 			                   mpd ncmpcpp picom lf pamixer \
 			                   ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
 			                   zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
@@ -84,3 +84,49 @@ else
 fi
 sleep 2 
 clear
+########## ---------- Copy the Rice! ---------- ##########
+
+logo "Installing dotfiles.."
+printf "Copying files to respective directories..\n"
+
+[ ! -d ~/.config ] && mkdir -p ~/.config
+[ ! -d ~/.local/share/fonts ] && mkdir -p ~/.local/share/fonts
+
+for archivos in ~/dotfiles/config/*; do
+  cp -R "${archivos}" ~/.config/
+  if [ $? -eq 0 ]; then
+	printf "%s%s%s folder copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
+	sleep 1
+  else
+	printf "%s%s%s failed to been copied, you must copy it manually%s\n" "${BLD}" "${CRE}" "${archivos}" "${CNC}"
+	sleep 1
+  fi
+done
+
+for archivos in ~/dotfiles/misc/bin/*; do
+  cp -R "${archivos}" ~/.local/bin/
+  if [ $? -eq 0 ]; then
+	printf "%s%s%s file copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
+	sleep 1
+  else
+	printf "%s%s%s failed to been copied, you must copy it manually%s\n" "${BLD}" "${CRE}" "${archivos}" "${CNC}"
+	sleep 1
+  fi
+done
+
+for archivos in ~/dotfiles/misc/applications/*; do
+  cp -R "${archivos}" ~/.local/share/applications/
+  if [ $? -eq 0 ]; then
+	printf "%s%s%s file copied succesfully!%s\n" "${BLD}" "${CGR}" "${archivos}" "${CNC}"
+	sleep 1
+  else
+	printf "%s%s%s failed to been copied, you must copy it manually%s\n" "${BLD}" "${CRE}" "${archivos}" "${CNC}"
+	sleep 1
+  fi
+done
+
+cp -f "$HOME"/myarch/.zshrc "$HOME"
+cp -f "$HOME"/myarch/.xinitrc "$HOME"
+fc-cache -rv >/dev/null 2>&1
+printf "%s%sFiles copied succesfully!!%s\n" "${BLD}" "${CGR}" "${CNC}"
+sleep 3
