@@ -186,15 +186,16 @@ clear
 
 logo "Installing DWM & dmenu"
 cd ~/myarch/mydwm
-read -p "Choose your dwm flavor(eremika/mikasared): " dwmcolor
+read -p "Choose your dwm flavor(eremika/mikasared/street): " dwmcolor
 if [ $dwmcolor = "eremika" ]; then
 	cp eremika config.def.h
 	sudo make clean install
-	rm -rf config.h config.def.h
 elif [ $dwmcolor = "mikasared" ]; then
 	cp mikasared config.def.h
 	sudo make clean install
-	rm -rf config.h config.def.h
+elif [ $dwmcolor = "street" ]; then
+	cp street config.def.h
+	sudo make clean install
 else echo "Not a valid option!"
 fi
 cd ~/myarch/dmenu && sudo make clean install
