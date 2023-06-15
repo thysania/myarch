@@ -1,3 +1,6 @@
+# ╔═╗╔═╗╦ ╦╦═╗╔═╗  ╔═╗╔═╗╔╗╔╔═╗╦╔═╗  - thysania
+# ╔═╝╚═╗╠═╣╠╦╝║    ║  ║ ║║║║╠╣ ║║ ╦  - https://github.com/thysania/myarch
+# ╚═╝╚═╝╩ ╩╩╚═╚═╝  ╚═╝╚═╝╝╚╝╚  ╩╚═╝  - zsh config
 
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
