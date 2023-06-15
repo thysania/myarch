@@ -178,3 +178,21 @@ else
   printf "%s%sYour shell is already zsh\nGood bye! installation finished, now reboot%s\n" "${BLD}" "${CGR}" "${CNC}"
   zsh
 fi
+clear
+
+########## --------- Installing DWM & dmenu---------- ##########
+
+logo "Installing DWM & dmenu"
+cd ~/myarch/mydwm
+read -p "Choose your dwm flavor(eremika/mikasared): " dwmcolor
+if [ $dwmcolor = "eremika" ]; then
+	cp eremika config.def.h
+	sudo make clean install
+	rm -rf config.h config.def.h
+elif [ $dwmcolor = "mikasared" ]; then
+	cp mikasared config.def.h
+	sudo make clean install
+	rm -rf config.h config.def.h
+else echo "Not a valid option!"
+fi
+cd ~/myarch/dmenu && sudo make clean install
