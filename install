@@ -84,6 +84,7 @@ if [ ! -e $HOME/.config/user-dirs.dirs ]; then
 else
 	echo "user-dirs.dirs already exists"
 fi
+mkdir -p ~/Pictures/screenshots
 sleep 2 
 clear
 ########## ---------- Copy the Rice! ---------- ##########
