@@ -52,7 +52,7 @@ logo "Installing needed packages.."
 
 dependencias=(base-devel xorg-xsetroot xorg-server xorg-xinit libx11 libxft libxinerama webkit2gtk libmpdclient \
 			dunst udiskie unzip acpie feh scrot xdg-user-dirs xorg-xprob neofetch \
-			mpd ncmpcpp picom lf pamixer \
+			playerctl mpd ncmpcpp picom lf pamixer \
 			ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-dejavu ttf-hack noto-font-emoji \
 			zsh zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search xorg-xrandr)
 
@@ -196,3 +196,15 @@ elif [ $dwmcolor = "mikasared" ]; then
 else echo "Not a valid option!"
 fi
 cd ~/myarch/dmenu && sudo make clean install
+mkdir -p ~/clones
+
+########## --------- Changing wallpaper ---------- ##########
+feh ~/myarch/wallpapers/
+########## --------- Installing Snap---------- ##########
+
+logo "Installing snap store"
+cd ~/clones && git clone https://aur.archlinux.org/snapd.git
+cd snapd
+makepkg -si && sleep 10
+sudo systemctl enable --now snapd.socket
+echo"" && echo "DONE! Installation finished."
