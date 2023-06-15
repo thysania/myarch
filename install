@@ -201,7 +201,7 @@ cd ~/myarch/dmenu && sudo make clean install
 mkdir -p ~/clones
 
 ########## --------- Changing wallpaper ---------- ##########
-feh ~/myarch/wallpapers/street.png
+feh --bg-fill ~/myarch/wallpapers/Street/1318187.png
 ########## --------- Installing Snap store ---------- ##########
 
 logo "Installing snap store"
