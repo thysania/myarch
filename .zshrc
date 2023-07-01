@@ -66,14 +66,6 @@ setopt AUTO_LIST             # Automatically list choices on ambiguous completio
 setopt HIST_IGNORE_DUPS	     # Do not write events to history that are duplicates of previous events
 setopt HIST_FIND_NO_DUPS     # When searching history don't display results already cycled through twice
 
-### PLUGINS
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()
@@ -125,6 +117,12 @@ alias gitcom='git commit -m'
 alias gitp='git push'
 alias gita='git add'
 
+# git ssh
+alias sshgen='ssh-keygen -t ed25519 -C'
+alias sshstart='eval "$(ssh-agent -s)"'
+alias sshadd='ssh-add ~/.ssh/id_ed25519'
+alias sshshow='cat ~/.ssh/id_ed25519.pub'
+
 # shutdown and reboot
 alias ssn='sudo shutdown'
 alias sr='sudo reboot'
@@ -132,8 +130,8 @@ alias sr='sudo reboot'
 # pacman 
 alias pacsyu='sudo pacman -Syu'                  # update only standard pkgs
 alias pacsyyu='sudo pacman -Syyu'                # Refresh pkglist & update standard pkgs
-alias pacs='sudo pacman -S'                     # Install pkgs
-alias pacr='sudo pacman -Rns'                   # Remove packages, including its settings and dependencies
+alias pacs='sudo pacman -S'                      # Install pkgs
+alias pacr='sudo pacman -Rns'                    # Remove packages, including its settings and dependencies
 alias pacrr='sudo pacman -Rs'                    # Delete all orphaned packages
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
@@ -142,6 +140,33 @@ alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 alias zshrc='nvim ~/.zshrc'
 alias bashrc='nvim ~/.bashrc'
 alias vi="nvim"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="cypher"
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+git
+zsh-autosuggestions
+zsh-syntax-highlighting
+zsh-completions
+)
+
+# Path to your oh-my-zsh installation.
+source $ZSH/oh-my-zsh.sh
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red d
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #57
+COMPLETION_WAITING_DOTS="true"
 
 ### AUTOSTART
 $HOME/.local/bin/colorscript --exec blocks1
