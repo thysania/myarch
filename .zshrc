@@ -160,7 +160,7 @@ zsh-completions
 )
 
 # Path to your oh-my-zsh installation.
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red d
@@ -169,4 +169,4 @@ source $ZSH/oh-my-zsh.sh
 COMPLETION_WAITING_DOTS="true"
 
 ### AUTOSTART
-$HOME/.local/bin/colorscript --exec blocks1
+#$HOME/.local/bin/colorscript --exec blocks1
