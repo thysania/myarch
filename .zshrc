@@ -136,6 +136,15 @@ alias pacrr='sudo pacman -Rs'                    # Delete all orphaned packages
 alias unlock='sudo rm /var/lib/pacman/db.lck'    # remove pacman lock
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)' # remove orphaned packages
 
+# apt
+alias apti='sudo apt-get install'                         # Install pkgs
+alias apty='sudo apt-get update'                          # Refresh pkglist
+alias aptup='sudo apt-get update && sudo apt-get upgrade' # Refresh pkglist and update 
+alias aptr='sudo apt-get remove'                          # Remove pkgs
+alias aptrr='sudo apt-get remove --purge'                 # Purge
+alias autorm='sudo apt-get autoremove'                    # Autoremove
+alias apts='apt-cache search'                             # Search for packages by name or keyword
+
 # others
 alias zshrc='nvim ~/.zshrc'
 alias bashrc='nvim ~/.bashrc'
